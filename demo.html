@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>匯率轉換計算機</title>
+    </head>
+    <body>
+        <div>
+            <label>新台幣(TWD)</label>
+            <input id="TWD" type="text" value=""/>
+            <br><br>
+            <input id="btn" type="button" value="轉換"/>
+            <hr>
+            Result:<p class="summary"></ul></p>
+        </div>
+        <script>
+            var summary = document.querySelector('.summary');
+
+            document.getElementById('btn').onclick = function(){
+                var result = '';
+                var resultU = '';
+                var resultA = '';
+                var resultJ = '';
+                var resultE = '';
+                var resultK = '';
+                var TWD = parseFloat(document.getElementById('TWD').value);
+                resultU = (TWD * 30.29).toFixed(2) + ' USD';
+                resultA = (TWD * 19.66).toFixed(2) + ' AUD';
+                resultJ = (TWD * 0.2091).toFixed(2) + ' JPY';
+                resultE = (TWD * 32.11).toFixed(2) + ' EUR';
+                resultK = (TWD * 0.02144).toFixed(2) + ' KRW';
+                result = resultA+" " + resultE+" "+resultJ+" "+resultK+" "+resultU;
+                summary.innerHTML=result;
+            }
+        </script>
+    </body>
+</html>
